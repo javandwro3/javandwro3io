@@ -69,11 +69,6 @@ public class FileStreams {
 
         fileOutputStream.close();
 
-
-        // SCIEŻKA WZGLĘDNA I BEZWZGLĘDNA
-        // BEZWZGLĘDNA (ABSOLUTE PATH) C:\test\mojFolder\test.txt
-        // WZGLEDNA (RELATIVE PATH)   mojFolder\test.txt
-
     }
 
 }

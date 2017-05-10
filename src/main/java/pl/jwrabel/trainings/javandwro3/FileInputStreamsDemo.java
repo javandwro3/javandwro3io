@@ -53,6 +53,24 @@ public class FileInputStreamsDemo {
         // === ZADANIE === przeczytać cały plik do Stringa
         System.out.println("=== CZYTANIE PLIKU DO STRINGA ===");
 
+        FileInputStream fisFileToString = new FileInputStream("ala.txt");
+
+        StringBuilder stringBuilder = new StringBuilder();
+        while ((read = fisFileToString.read()) > 0) {
+            stringBuilder.append((char)read);
+        }
+
+        String text = stringBuilder.toString();
+
+        System.out.println(text);
+
+        fisFileToString.close();
+
+
+        // SCIEŻKA WZGLĘDNA I BEZWZGLĘDNA
+        // BEZWZGLĘDNA (ABSOLUTE PATH) C:\test\mojFolder\test.txt
+        // WZGLEDNA (RELATIVE PATH)   mojFolder\test.txt
+
 
     }
 
