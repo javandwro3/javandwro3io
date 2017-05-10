@@ -2,6 +2,7 @@ package pl.jwrabel.trainings.javandwro3;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 
 public class FileStreams {
 
@@ -68,6 +69,10 @@ public class FileStreams {
 
         fileOutputStream.close();
 
+
+        // SCIEŻKA WZGLĘDNA I BEZWZGLĘDNA
+        // BEZWZGLĘDNA (ABSOLUTE PATH) C:\test\mojFolder\test.txt
+        // WZGLEDNA (RELATIVE PATH)   mojFolder\test.txt
 
     }
 

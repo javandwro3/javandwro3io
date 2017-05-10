@@ -1,20 +1,52 @@
 package pl.jwrabel.trainings.javandwro3;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FileInputStreamsDemo {
 
     public static void main(String[] args) throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("ala.txt");
+        // FileInputStream strumień wejściowy do aplikacji czytający z pliku
+//        FileInputStream fileInputStream = new FileInputStream("ala.txt");
+//
+//        int read = fileInputStream.read();
+//        System.out.println((char)read);
+//
+//        System.out.println((char)fileInputStream.read());
+//
+//        fileInputStream.close();
 
-        int read = fileInputStream.read();
-        System.out.println((char)read);
+        // wczytanie całego pliku
+        FileInputStream fis = new FileInputStream("ala.txt");
 
-        System.out.println((char)fileInputStream.read());
+        while (true) {
+            int read = fis.read();
+            if (read >= 0) {
+                System.out.println((char) read);
+            } else {
+                break;
+            }
+        }
+        // LUB
+        int read;
+        while ((read = fis.read()) > 0) {
+            System.out.println((char) read);
+        }
 
-        fileInputStream.close();
+        fis.close();
+
+        // === ZADANIE === odczytać cyfrę z pliku, wypisać pomnożoną razy 3
+        FileInputStream numberFis = new FileInputStream("number.txt");
+
+        int numberCode = numberFis.read();
+        int number = numberCode - '0';
+//        int number = numberCode - 48;
+
+        System.out.println(number * 3);
+
+        numberFis.close();
+
+        // === ZADANIE === przeczytać cały plik do Stringa
 
     }
 
