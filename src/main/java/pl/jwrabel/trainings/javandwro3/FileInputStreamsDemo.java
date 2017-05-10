@@ -36,17 +36,23 @@ public class FileInputStreamsDemo {
         fis.close();
 
         // === ZADANIE === odczytać cyfrę z pliku, wypisać pomnożoną razy 3
+        System.out.println("=== CZYTANIE CYFRY Z PLIKU ===");
         FileInputStream numberFis = new FileInputStream("number.txt");
 
         int numberCode = numberFis.read();
         int number = numberCode - '0';
 //        int number = numberCode - 48;
+        System.out.println("Przeczytana liczba");
+        System.out.println(number);
 
+        System.out.println("Pomnożona liczba");
         System.out.println(number * 3);
 
         numberFis.close();
 
         // === ZADANIE === przeczytać cały plik do Stringa
+        System.out.println("=== CZYTANIE PLIKU DO STRINGA ===");
+
 
     }
 
