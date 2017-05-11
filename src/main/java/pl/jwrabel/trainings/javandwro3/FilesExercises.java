@@ -42,5 +42,14 @@ public class FilesExercises {
 		}
 
 		charSink2.writeLines(stringList);
+
+		// === ZADANIE === Zapisać listę punktów do pliku
+		List<Point> points = new ArrayList<>();
+		points.add(new Point(100, 200));
+		points.add(new Point(4, 10));
+		points.add(new Point(1000, 50));
+
+
+
 	}
 }
