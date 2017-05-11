@@ -86,10 +86,57 @@ public class FilesExercises {
 			// Stworzenie nowego punktu o przeczytanych współrzędnych i dodanie do listy
 			Point point = new Point(x, y);
 			pointsReadFromFile.add(point);
+
+
+			// WYKORZYSTANIE METODY
+
+			List<Point> points = new ArrayList<>();
+			points.add(new Point(100, 200));
+			points.add(new Point(4, 10));
+			points.add(new Point(1000, 50));
+
+			FilesExercises.savePointsToFile(points, "points.csv");
+			List<Point> pointsReadFromFileMethod = FilesExercises.readPointsFromFile("points.csv");
+
+
+		}
+	}
+
+	public static List<Point> readPointsFromFile(String file) throws IOException {
+		List<String> fileLines = Files.readLines(new File(file), Charsets.UTF_8);
+		List<Point> pointsReadFromFile = new ArrayList<>();
+
+		for (String fileLine : fileLines) {
+			System.out.println("Line  >" + fileLine + "<");
+
+			// Podzielenie Stringa "100,200" na 2 Stringi "100", "200"
+			String[] split = fileLine.split(",");
+			String xString = split[0];
+			String yString = split[1];
+
+			// Wypisanie podzielonych Stringów
+			System.out.println("xString >" + xString + "<");
+			System.out.println("yString >" + yString + "<");
+
+			// Parsowanie - zamiana stringów z liczbą na liczbę
+			double x = Double.parseDouble(xString);
+			double y = Double.parseDouble(yString);
+
+			// Stworzenie nowego punktu o przeczytanych współrzędnych i dodanie do listy
+			Point point = new Point(x, y);
+			pointsReadFromFile.add(point);
 		}
 
+		return pointsReadFromFile;
+	}
 
+	public static void savePointsToFile(List<Point> points, String fileName) throws IOException {
+		CharSink pointsCharSink = Files.asCharSink(new File(fileName), Charsets.UTF_8, FileWriteMode.APPEND);
 
+		for (Point point : points) {
+			pointsCharSink.write(point.toString() + "\n"); // z użyciem nadpisanej metody toString
+
+		}
 
 	}
 }
