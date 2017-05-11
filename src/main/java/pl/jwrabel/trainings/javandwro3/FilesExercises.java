@@ -61,6 +61,9 @@ public class FilesExercises {
 
 		}
 
+		// === ZADANIE === Wczytać listę punktów z pliku CSV
+
+
 
 	}
 }
