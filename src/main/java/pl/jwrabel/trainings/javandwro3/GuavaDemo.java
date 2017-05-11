@@ -3,6 +3,7 @@ package pl.jwrabel.trainings.javandwro3;
 import com.google.common.base.Charsets;
 import com.google.common.io.CharSink;
 import com.google.common.io.Files;
+import com.google.common.io.MoreFiles;
 import com.google.common.io.Resources;
 
 import java.io.File;
@@ -49,5 +50,7 @@ public class GuavaDemo {
 		// Przeczytanie zasobu
 		URL resource = Resources.getResource("test.txt");
 		String resourceAsString = Resources.toString(resource, Charsets.UTF_8);
+
+		// MoreFiles.
 	}
 }
