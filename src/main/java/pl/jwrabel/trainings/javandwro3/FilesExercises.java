@@ -64,9 +64,11 @@ public class FilesExercises {
 
 		// === ZADANIE === Wczytać listę punktów z pliku CSV
 
+		// Przeczytanie wszsytkich linii z pliku i zapisanie do listy Stringów, każdy element to kolejna linia
 		List<String> fileLines = Files.readLines(new File("points.csv"), Charsets.UTF_8);
 		List<Point> pointsReadFromFile = new ArrayList<>();
 
+		// Przejście po wszystkich liniach (pętla FOR-EACH)
 		for (String fileLine : fileLines) {
 			System.out.println("Line  >" + fileLine + "<");
 
