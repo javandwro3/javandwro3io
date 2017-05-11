@@ -22,10 +22,7 @@ public class ApacheCommonsIO {
 		File[] files = {new File("a.txt"), new File("b.txt")};
 		sizeFileComparator.sort(files);
 
-
-
 //		sizeFileComparator.compare()
-
 
 		long freeSpaceKb = FileSystemUtils.freeSpaceKb("c:\\");
 
