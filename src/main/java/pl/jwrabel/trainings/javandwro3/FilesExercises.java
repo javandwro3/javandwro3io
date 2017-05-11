@@ -26,11 +26,11 @@ public class FilesExercises {
 		fileWriter.close();
 
 		// LUB (GUAVA)
-		CharSink charSink = Files.asCharSink(new File("numbers.txt"), Charsets.UTF_8, FileWriteMode.APPEND);
-
-		for (int i = 0; i <= 10_000; i++) {
-			charSink.write("" + i + "\n");
-		}
+//		CharSink charSink = Files.asCharSink(new File("numbers.txt"), Charsets.UTF_8, FileWriteMode.APPEND);
+//
+//		for (int i = 0; i <= 10_000; i++) {
+//			charSink.write("" + i + "\n");
+//		}
 
 		// LUB (GUAVA#2)
 		CharSink charSink2 = Files.asCharSink(new File("numbers.txt"), Charsets.UTF_8);
@@ -49,6 +49,17 @@ public class FilesExercises {
 		points.add(new Point(4, 10));
 		points.add(new Point(1000, 50));
 
+		CharSink pointsCharSink = Files.asCharSink(new File("points.csv"), Charsets.UTF_8, FileWriteMode.APPEND);
+
+		for (Point point : points) {
+			pointsCharSink.write(point.toString() + "\n"); // z użyciem nadpisanej metody toString
+			// LUB
+//			pointsCharSink.write("" + point);
+
+			// LUB
+//			pointsCharSink.write(point.getX() + "," + point.getY() + "\n");
+
+		}
 
 
 	}
