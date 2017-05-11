@@ -17,6 +17,8 @@ import java.util.List;
  */
 public class GuavaDemo {
 	public static void main(String[] args) throws IOException {
+
+		// Przeczytanie wszystkich linii z pliku
 		File file = new File("test.txt");
 		List<String> lines = Files.readLines(file, Charsets.UTF_8);
 
