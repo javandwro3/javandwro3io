@@ -87,9 +87,7 @@ public class FilesExercises {
 			Point point = new Point(x, y);
 			pointsReadFromFile.add(point);
 
-
 			// WYKORZYSTANIE METODY
-
 			List<Point> points = new ArrayList<>();
 			points.add(new Point(100, 200));
 			points.add(new Point(4, 10));
@@ -97,8 +95,6 @@ public class FilesExercises {
 
 			FilesExercises.savePointsToFile(points, "points.csv");
 			List<Point> pointsReadFromFileMethod = FilesExercises.readPointsFromFile("points.csv");
-
-
 		}
 	}
 
