@@ -17,6 +17,7 @@ public class FileInputStreamsDemo {
 //        fileInputStream.close();
 
         // wczytanie całego pliku
+
         FileInputStream fis = new FileInputStream("ala.txt");
 
         while (true) {
