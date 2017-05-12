@@ -123,6 +123,21 @@ public class FilesExercises {
 
 			// Stworzenie nowego punktu o przeczytanych współrzędnych i dodanie do listy
 			Point point = new Point(x, y);
+
+			pointsReadFromFile.add(point);
+		}
+
+		return pointsReadFromFile;
+	}
+
+
+	public static List<Point> readPointsFromFileConstructor(String file) throws IOException {
+		List<String> fileLines = Files.readLines(new File(file), Charsets.UTF_8);
+		List<Point> pointsReadFromFile = new ArrayList<>();
+
+		for (String fileLine : fileLines) {
+			Point point = new Point(fileLine);
+
 			pointsReadFromFile.add(point);
 		}
 

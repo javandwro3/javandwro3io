@@ -7,9 +7,12 @@ public class Point {
 	private double x;
 	private double y;
 
-	// "100,200"
-	public Point(String text){
+	// Konstruktor tworzący punkt na podstawie String w formacie "x,y", np. "100,200"
+	public Point(String text) {
+		String[] split = text.split(",");
 
+		this.x = Double.parseDouble(split[0]);
+		this.y = Double.parseDouble(split[1]);
 	}
 
 	public Point(double x, double y) {
