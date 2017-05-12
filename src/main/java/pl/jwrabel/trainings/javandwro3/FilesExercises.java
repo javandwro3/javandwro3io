@@ -6,6 +6,7 @@ import com.google.common.io.FileWriteMode;
 import com.google.common.io.Files;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -129,6 +130,11 @@ public class FilesExercises {
 	}
 
 	public static void savePointsToFile(List<Point> points, String fileName) throws IOException {
+		// Wyczyszczenie pliku
+		FileOutputStream fileOutputStream = new FileOutputStream(fileName);
+		fileOutputStream.close();
+
+		// Zapisanie listy punktów do pliku
 		CharSink pointsCharSink = Files.asCharSink(new File(fileName), Charsets.UTF_8, FileWriteMode.APPEND);
 
 		for (Point point : points) {

@@ -28,5 +28,6 @@ public class ApacheCommonsIO {
 
 		FileUtils.cleanDirectory(new File("myDir"));
 
+
 	}
 }
